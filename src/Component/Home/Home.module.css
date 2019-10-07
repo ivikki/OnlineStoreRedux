@@ -1,0 +1,16 @@
+.wrapper{
+    margin: 5px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 13px;
+    right: 10%;
+}
+
+.wrapper-card{
+    display: flex;
+    flex-wrap: wrap;
+}

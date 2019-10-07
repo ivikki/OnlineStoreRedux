@@ -1,0 +1,22 @@
+.wrapper{
+    width: 30%;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    margin: 20px 10px;
+}
+
+img{
+    height: 300px;
+    max-width: 80%;
+}
+
+.btn{
+    margin: 20px 5px 0 5px;
+}
+
+.card{
+    padding: 20px;
+}
+
+

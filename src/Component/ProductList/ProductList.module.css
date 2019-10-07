@@ -1,0 +1,45 @@
+.wrapper{
+    margin: 5px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 13px;
+    right: 10%;
+}
+
+.wrapper-card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 20px 0;
+}
+
+.page{
+    list-style-type: none;
+    margin: 0 15px;
+    color: black;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.page:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+
+.active{
+    color: cornflowerblue;
+}
+
+.active:hover{
+    border: none;
+}
+
