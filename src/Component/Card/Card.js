@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import { Button } from "../Button";
 import img from "./no-image-300x450.jpg";
-import { API } from "../../API";
 import s from "./Card.module.css";
 
 export class Card extends React.Component {
@@ -12,15 +10,9 @@ export class Card extends React.Component {
     return product.image ? <img src={product.image} /> : <img src={img} />;
   };
 
-  removeCard = () => {
-    API.deleteProduct(this.props.product.id).then(res => {
-      if (res.status !== 200) {
-        alert("Failure. Product not removed");
-      } else {
-        alert("Product removed");
-        this.props.deleteCallback(this.props.product.id);
-      }
-    });
+  removeCard = async () => {
+    const res = await this.props.deleteProductEvent(this.props.product.id);
+    this.props.deleteCallback(res);
   };
 
   renderStock = () => {
@@ -63,8 +55,3 @@ export class Card extends React.Component {
     return <div className={s.wrapper}>{this.renderCard()}</div>;
   }
 }
-
-Card.propTypes = {
-  product: PropTypes.object.isRequired,
-  isAdmin: PropTypes.bool.isRequired
-};

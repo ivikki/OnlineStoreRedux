@@ -2,9 +2,9 @@ const API_BASE = process.env.REACT_APP_API_BASE;
 
 class APIRequest {
   async getProducts({ size, page } = {}) {
-    let url = API_BASE + "/product/list?";
+    let url = API_BASE + "/product/list?sort=id,desc";
     if (size) {
-      url += "size=" + size;
+      url += "&size=" + size;
     }
 
     if (page) {

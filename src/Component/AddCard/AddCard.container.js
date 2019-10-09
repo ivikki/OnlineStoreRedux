@@ -1,13 +1,11 @@
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { ProductList } from "./ProductList";
-import { actionGetProducts } from "../../Store/Action";
+import { AddCard } from "./AddCard";
+import { actionAddProduct } from "../../Store/Action";
 
 function mapStateToProps(state) {
   return {
     products: state.products,
-    size: state.size,
-    totalPages: state.totalPages,
     pageNumber: state.pageNumber,
     error: state.error,
     message: state.message
@@ -16,11 +14,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getProductsEvent: bindActionCreators(actionGetProducts, dispatch)
+    addProductEvent: bindActionCreators(actionAddProduct, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductList);
+)(AddCard);

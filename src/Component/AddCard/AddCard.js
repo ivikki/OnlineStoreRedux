@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../Button";
+import { Modal } from "../Modal";
 import s from "./AddCard.module.css";
-import { API } from "../../API";
-import { Redirect } from "react-router-dom";
 
 export class AddCard extends React.Component {
   state = {
-    redirect: false,
     errors: {}
   };
 
@@ -26,14 +24,14 @@ export class AddCard extends React.Component {
       image: this.refUrl.current.value,
       inStock: this.refStock.current.value === "true"
     };
-
-    API.addProduct(product).then(res => {
+    this.props.addProductEvent(product).then(res => {
       if (res.status === 200) {
-        this.setState({
-          redirect: true
-        });
+        this.refTitle.current.value = "";
+        this.refPrice.current.value = "";
+        this.refQuantity.current.value = "";
+        this.refUrl.current.value = "";
+        this.refStock.current.value = true;
       } else {
-        alert("Error. Component not added.");
         this.setState({
           errors: res.body.errors
         });
@@ -56,12 +54,11 @@ export class AddCard extends React.Component {
   }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to="/admin" />;
-    }
-
     return (
       <div className={s.wrapper}>
+        {this.props.error != null || this.props.message != null ? (
+          <Modal />
+        ) : null}
         <div className={s.modal}>
           <h2 className="text-center">Add Product</h2>
           <form>

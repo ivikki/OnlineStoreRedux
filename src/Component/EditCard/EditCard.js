@@ -4,6 +4,7 @@ import { Button } from "../Button";
 import s from "./EditCard.module.css";
 import { API } from "../../API";
 import { Redirect } from "react-router-dom";
+import Modal from "../Modal/Modal.container";
 
 export class EditCard extends React.Component {
   state = {
@@ -31,12 +32,11 @@ export class EditCard extends React.Component {
       image: this.state.product.image,
       inStock: String(this.state.product.inStock) === "true"
     };
-    API.editProduct(id, product).then(res => {
+    this.props.editProductEvent(id, product).then(res => {
       if (res.status === 200) {
         this.setState({
           redirect: true
         });
-        alert("Product edit. Changes accepted");
       } else {
         this.setState({
           errors: res.body.errors
@@ -74,6 +74,9 @@ export class EditCard extends React.Component {
 
     return (
       <div className={s.wrapper}>
+        {this.props.error != null || this.props.message != null ? (
+          <Modal />
+        ) : null}
         <div className={s.modal}>
           <h2 className="text-center">Edit Product</h2>
           <form>

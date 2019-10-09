@@ -1,8 +1,9 @@
 import {
-  DELETE_PRODUCT,
-  EDIT_PRODUCT,
-  ADD_PRODUCT,
-  GET_PRODUCTS
+  SHOW_MESSAGE,
+  CLEAR_MESSAGE,
+  GET_PRODUCTS,
+  CLEAR_ERROR,
+  SHOW_ERROR
 } from "../Action";
 
 export function RootReducer(state, action) {
@@ -13,12 +14,17 @@ export function RootReducer(state, action) {
       let pageNumber = action.payload.pageNumber;
       return { ...state, products, totalPages, pageNumber };
     }
-    case DELETE_PRODUCT: {
-    }
-    case EDIT_PRODUCT: {
-    }
-    case ADD_PRODUCT: {
-    }
+    case SHOW_MESSAGE:
+      return { ...state, message: action.payload };
+
+    case CLEAR_MESSAGE:
+      return { ...state, message: null };
+
+    case SHOW_ERROR:
+      return { ...state, error: action.payload };
+
+    case CLEAR_ERROR:
+      return { ...state, error: null };
   }
 
   return state;

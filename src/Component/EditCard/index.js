@@ -1,3 +1,3 @@
-import { EditCard } from "./EditCard";
+import EditCard from "./EditCard.container";
 
 export { EditCard };

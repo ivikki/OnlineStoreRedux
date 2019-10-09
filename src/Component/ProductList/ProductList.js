@@ -1,27 +1,21 @@
 import React from "react";
 import { Card } from "../Card";
 import s from "./ProductList.module.css";
+import Modal from "../Modal/Modal.container";
 
 export class ProductList extends React.Component {
-  state = {
-    products: [],
-    totalPages: 1
-  };
-
   componentDidMount() {
-    this.changePage(0);
+    this.changePage(this.props.pageNumber);
   }
-
-  deleteCallback = id => {
-    let products = this.state.products.filter(el => el.id !== id);
-    this.setState({
-      products
-    });
-    this.changePage();
-  };
 
   changePage = page => {
     this.props.getProductsEvent({ size: this.props.size, page });
+  };
+
+  deleteCallback = res => {
+    if (res.status === 200) {
+      this.changePage(this.props.pageNumber);
+    }
   };
 
   getClassName(num) {
@@ -67,6 +61,13 @@ export class ProductList extends React.Component {
   };
 
   render() {
-    return <div className={s.wrapper}>{this.renderCards()}</div>;
+    return (
+      <div className={s.wrapper}>
+        {this.props.error != null || this.props.message != null ? (
+          <Modal />
+        ) : null}
+        {this.renderCards()}
+      </div>
+    );
   }
 }

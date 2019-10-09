@@ -1,3 +1,3 @@
-import { AddCard } from "./AddCard";
+import AddCard from "./AddCard.container";
 
 export { AddCard };
