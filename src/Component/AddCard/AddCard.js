@@ -39,6 +39,12 @@ export class AddCard extends React.Component {
     });
   };
 
+  clearErrors = () => {
+    this.setState({
+      errors: {}
+    });
+  };
+
   showError(errorKey) {
     if (this.state.errors[errorKey]) {
       return (
@@ -61,7 +67,7 @@ export class AddCard extends React.Component {
         ) : null}
         <div className={s.modal}>
           <h2 className="text-center">Add Product</h2>
-          <form>
+          <form onFocus={this.clearErrors}>
             <div className="form-group">
               <label>Title Product:</label>
               <input

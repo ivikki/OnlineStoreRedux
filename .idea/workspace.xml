@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe973b82-88bb-4b93-8b7f-3942b990d093" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Component/AddCard/AddCard.container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Card/Card.container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/EditCard/EditCard.container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Modal/Modal.container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/AddCard/AddCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/AddCard/AddCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/AddCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/AddCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Card/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Card/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/EditCard/EditCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/EditCard/EditCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/EditCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/EditCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/ProductList/ProductList.container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/ProductList/ProductList.container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/ProductList/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/ProductList/ProductList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/Action/Action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Action/Action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Action/Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Action/Type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/InitState/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/InitState/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Reducer/RootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Reducer/RootReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,7 +29,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="3" />
+          <entry key="css" value="4" />
           <entry key="html" value="2" />
           <entry key="js" value="80" />
           <entry key="json" value="3" />
@@ -53,7 +37,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
+          <entry key="CSS" value="4" />
           <entry key="HTML" value="2" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="80" />
@@ -66,18 +50,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="248" />
+          <entry key="css" value="265" />
           <entry key="html" value="1" />
-          <entry key="js" value="3254" />
+          <entry key="js" value="3290" />
           <entry key="json" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="248" />
+          <entry key="CSS" value="265" />
           <entry key="HTML" value="1" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="3254" />
+          <entry key="JavaScript" value="3290" />
         </counts>
       </usages-collector>
     </session>
@@ -99,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Store/Action/Action.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285">
+            <state relative-caret-position="315">
               <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -132,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Component/AddCard/AddCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="60" column="17" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="60" selection-end-column="17" />
+            <state relative-caret-position="-375">
+              <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -153,6 +137,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Component/ProductList/ProductList.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -162,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.container.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+            <state relative-caret-position="225">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -213,14 +206,14 @@
         <option value="$PROJECT_DIR$/src/Component/AddCard/AddCard.container.js" />
         <option value="$PROJECT_DIR$/src/Component/App/App.js" />
         <option value="$PROJECT_DIR$/src/Store/InitState/index.js" />
-        <option value="$PROJECT_DIR$/src/Component/AddCard/AddCard.js" />
         <option value="$PROJECT_DIR$/src/Component/ProductList/ProductList.js" />
         <option value="$PROJECT_DIR$/src/Component/ProductList/ProductList.container.js" />
-        <option value="$PROJECT_DIR$/src/Component/Modal/Modal.module.css" />
-        <option value="$PROJECT_DIR$/src/Store/Action/Action.js" />
         <option value="$PROJECT_DIR$/src/Component/EditCard/EditCard.js" />
         <option value="$PROJECT_DIR$/src/Component/Modal/Modal.js" />
         <option value="$PROJECT_DIR$/src/Component/Modal/Modal.container.js" />
+        <option value="$PROJECT_DIR$/src/Component/AddCard/AddCard.js" />
+        <option value="$PROJECT_DIR$/src/Store/Action/Action.js" />
+        <option value="$PROJECT_DIR$/src/Component/Modal/Modal.module.css" />
       </list>
     </option>
   </component>
@@ -444,12 +437,12 @@
       <workItem from="1570474320257" duration="8913000" />
       <workItem from="1570538137575" duration="3631000" />
       <workItem from="1570555637754" duration="11146000" />
-      <workItem from="1570615714100" duration="9845000" />
+      <workItem from="1570615714100" duration="11789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35983000" />
+    <option name="totallyTimeSpent" value="37927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -716,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store/Reducer/RootReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Component/ProductList/ProductList.container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -750,16 +736,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.module.css">
+    <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="225">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Component/AddCard/AddCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Store/Reducer/RootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Store/Action/Action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
+        <state relative-caret-position="315">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -777,23 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Component/AddCard/AddCard.js">
+    <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="60" column="17" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="60" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Component/Modal/Modal.container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
         </state>
       </provider>
     </entry>
