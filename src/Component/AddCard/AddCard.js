@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../Button";
-import { Modal } from "../Modal";
 import s from "./AddCard.module.css";
 
 export class AddCard extends React.Component {
@@ -33,7 +32,7 @@ export class AddCard extends React.Component {
         this.refStock.current.value = true;
       } else {
         this.setState({
-          errors: res.body.errors
+          errors: res.body.errors || {}
         });
       }
     });
@@ -62,9 +61,6 @@ export class AddCard extends React.Component {
   render() {
     return (
       <div className={s.wrapper}>
-        {this.props.error != null || this.props.message != null ? (
-          <Modal />
-        ) : null}
         <div className={s.modal}>
           <h2 className="text-center">Add Product</h2>
           <form onFocus={this.clearErrors}>

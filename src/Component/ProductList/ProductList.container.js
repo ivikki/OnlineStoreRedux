@@ -8,9 +8,7 @@ function mapStateToProps(state) {
     products: state.products,
     size: state.size,
     totalPages: state.totalPages,
-    pageNumber: state.pageNumber,
-    error: state.error,
-    message: state.message
+    pageNumber: state.pageNumber
   };
 }
 

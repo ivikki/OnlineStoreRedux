@@ -32,7 +32,7 @@ export const actionAddProduct = product => dispatch => {
 
 export const actionDeleteProduct = id => dispatch => {
   return API.deleteProduct(id).then(res => {
-    if (res.status !== 200) {
+    if (res.status === 200) {
       dispatch(actionShowMessage("Success. Product removed"));
     } else {
       dispatch(actionShowError("Failure. Product not removed"));

@@ -6,9 +6,7 @@ import { actionAddProduct } from "../../Store/Action";
 function mapStateToProps(state) {
   return {
     products: state.products,
-    pageNumber: state.pageNumber,
-    error: state.error,
-    message: state.message
+    pageNumber: state.pageNumber
   };
 }
 

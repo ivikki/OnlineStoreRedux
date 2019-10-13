@@ -6,12 +6,20 @@ const modalRoot = document.getElementById("modal-root");
 
 export class Modal extends React.Component {
   state = {
-    isOpen: true
+    isOpen: false
   };
 
+  static getDerivedStateFromProps(props, state) {
+    if (props.message || props.error) {
+      return {
+        isOpen: true
+      };
+    }
+
+    return null;
+  }
+
   shadowClick = e => {
-    console.log(e.target);
-    console.log(e.currentTarget);
     if (e.target === e.currentTarget) {
       this.setState({
         isOpen: false

@@ -74,9 +74,6 @@ export class EditCard extends React.Component {
 
     return (
       <div className={s.wrapper}>
-        {this.props.error != null || this.props.message != null ? (
-          <Modal />
-        ) : null}
         <div className={s.modal}>
           <h2 className="text-center">Edit Product</h2>
           <form>

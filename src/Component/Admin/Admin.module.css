@@ -15,3 +15,9 @@
     flex-wrap: wrap;
 }
 
+.btn_admin{
+    position: absolute;
+    top: 13px;
+    right: 10%;
+}
+

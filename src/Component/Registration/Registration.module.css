@@ -1,0 +1,44 @@
+.wrapper{
+    margin: 20px auto;
+    padding: 20px 0;
+    width: 50%;
+    text-align: center;
+}
+
+h3{
+    color: black;
+}
+
+.wrapper_form{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper .wrapper_form{
+    text-align: left;
+}
+
+.wrapper .wrapper_form label{
+    margin: 20px 0 5px 5px;
+}
+
+.wrapper_form_item{
+    margin-right: 30px;
+}
+
+.input{
+    width: 280px;
+    padding: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn{
+    display: block;
+    margin-top: 30px;
+    width: 100px;
+}
+
+.question{
+    margin-top: 50px;
+}
