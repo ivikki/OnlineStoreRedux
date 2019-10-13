@@ -31,11 +31,7 @@ export class Modal extends React.Component {
     this.setState({
       isOpen: false
     });
-    if (this.props.error !== null) {
-      this.props.actionClearErrorEvent();
-    } else if (this.props.message !== null) {
-      this.props.actionClearMessageEvent();
-    }
+    this.props.actionClearStoreEvent();
   };
 
   renderModal() {

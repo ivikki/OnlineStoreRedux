@@ -1,11 +1,5 @@
 import { createAction } from "redux-actions";
-import {
-  SHOW_MESSAGE,
-  SHOW_ERROR,
-  CLEAR_MESSAGE,
-  CLEAR_ERROR,
-  GET_PRODUCTS
-} from "./Type";
+import { SHOW_MESSAGE, SHOW_ERROR, CLEAR_STORE, GET_PRODUCTS } from "./Type";
 import { API } from "../../API";
 
 export const actionGetProducts = ({ size, page } = {}) => dispatch => {
@@ -55,7 +49,6 @@ export const actionEditProduct = (id, product) => dispatch => {
 };
 
 export const actionGetProductsSuccess = createAction(GET_PRODUCTS);
-export const actionClearError = createAction(CLEAR_ERROR);
+export const actionClearStore = createAction(CLEAR_STORE);
 export const actionShowError = createAction(SHOW_ERROR);
 export const actionShowMessage = createAction(SHOW_MESSAGE);
-export const actionClearMessage = createAction(CLEAR_MESSAGE);

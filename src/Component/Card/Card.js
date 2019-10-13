@@ -33,8 +33,11 @@ export class Card extends React.Component {
         <p>Quantity: {product.quantity}</p>
         {this.renderStock()}
         <div>{this.renderImage()}</div>
-        <Link to={`/admin/edit/${product.id}`}>
-          <Button className={`btn-warning ${s.btn}`}>Edit Product</Button>
+        <Link
+          to={`/admin/edit/${product.id}`}
+          className={`btn btn-warning ${s.btn}`}
+        >
+          Edit Product
         </Link>
         <Button className={`btn-danger ${s.btn}`} onClick={this.removeCard}>
           Remove Product

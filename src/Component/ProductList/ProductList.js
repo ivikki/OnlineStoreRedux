@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../Card";
 import s from "./ProductList.module.css";
+import { Link } from "react-router-dom";
 
 export class ProductList extends React.Component {
   componentDidMount() {
@@ -60,6 +61,16 @@ export class ProductList extends React.Component {
   };
 
   render() {
-    return <div className={s.wrapper}>{this.renderCards()}</div>;
+    return (
+      <div className={s.wrapper}>
+        <Link
+          to="/admin"
+          className={`btn-secondary btn-lg active ${s.btn_admin}`}
+        >
+          Admin
+        </Link>
+        {this.renderCards()}
+      </div>
+    );
   }
 }

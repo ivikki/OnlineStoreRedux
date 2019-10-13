@@ -1,10 +1,4 @@
-import {
-  SHOW_MESSAGE,
-  CLEAR_MESSAGE,
-  GET_PRODUCTS,
-  CLEAR_ERROR,
-  SHOW_ERROR
-} from "../Action";
+import { SHOW_MESSAGE, CLEAR_STORE, GET_PRODUCTS, SHOW_ERROR } from "../Action";
 
 export function RootReducer(state, action) {
   switch (action.type) {
@@ -17,14 +11,11 @@ export function RootReducer(state, action) {
     case SHOW_MESSAGE:
       return { ...state, message: action.payload };
 
-    case CLEAR_MESSAGE:
-      return { ...state, message: null };
+    case CLEAR_STORE:
+      return { ...state, message: null, error: null };
 
     case SHOW_ERROR:
       return { ...state, error: action.payload };
-
-    case CLEAR_ERROR:
-      return { ...state, error: null };
   }
 
   return state;
