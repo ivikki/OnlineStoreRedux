@@ -1,4 +1,5 @@
 export const initState = {
+  user: null,
   products: [],
   size: 3,
   pageNumber: 0,

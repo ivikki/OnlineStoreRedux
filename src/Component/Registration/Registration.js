@@ -33,7 +33,9 @@ export class Registration extends React.Component {
               />
             </div>
           </div>
-          <Button className={"btn-primary " + s.btn}>Send</Button>
+          <Link to={"/"} className={"btn btn-primary " + s.btn}>
+            Send
+          </Link>
         </form>
         <div className={s.question}>
           <h4>

@@ -13,6 +13,7 @@ export class ProductList extends React.Component {
   };
 
   deleteCallback = res => {
+    console.log(res);
     if (res.status === 200) {
       this.changePage(this.props.pageNumber);
     }

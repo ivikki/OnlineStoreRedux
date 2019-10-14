@@ -4,7 +4,7 @@ import { Button } from "../Button";
 import img from "./stock.png";
 import image from "./no-image-300x450.jpg";
 import s from "./Product.module.css";
-import { API } from "../../API";
+import { API } from "../../Service/API";
 
 export class Product extends React.Component {
   state = {

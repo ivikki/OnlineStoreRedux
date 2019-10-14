@@ -1,4 +1,10 @@
-import { SHOW_MESSAGE, CLEAR_STORE, GET_PRODUCTS, SHOW_ERROR } from "../Action";
+import {
+  SHOW_MESSAGE,
+  CLEAR_STORE,
+  GET_PRODUCTS,
+  SHOW_ERROR,
+  USER_LOGIN
+} from "../Action";
 
 export function RootReducer(state, action) {
   switch (action.type) {
@@ -8,6 +14,10 @@ export function RootReducer(state, action) {
       let pageNumber = action.payload.pageNumber;
       return { ...state, products, totalPages, pageNumber };
     }
+
+    case USER_LOGIN:
+      return { ...state, user: action.payload };
+
     case SHOW_MESSAGE:
       return { ...state, message: action.payload };
 

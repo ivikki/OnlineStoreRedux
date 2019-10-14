@@ -8,8 +8,13 @@ import { Product } from "../Product";
 import { Modal } from "../Modal";
 import { Registration } from "../Registration";
 import { Login } from "../Login";
+import { API } from "../../Service/API";
 
 export class App extends React.Component {
+  componentDidMount() {
+    API.tryRestoreSession();
+  }
+
   render() {
     return (
       <>

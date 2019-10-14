@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../Button";
 import s from "./EditCard.module.css";
-import { API } from "../../API";
+import { API } from "../../Service/API";
 import { Redirect } from "react-router-dom";
 import Modal from "../Modal/Modal.container";
 
