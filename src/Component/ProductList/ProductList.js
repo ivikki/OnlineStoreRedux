@@ -13,7 +13,6 @@ export class ProductList extends React.Component {
   };
 
   deleteCallback = res => {
-    console.log(res);
     if (res.status === 200) {
       this.changePage(this.props.pageNumber);
     }
@@ -41,6 +40,19 @@ export class ProductList extends React.Component {
     }
   };
 
+  renderAdminButton = () => {
+    console.log(this.props.user);
+    // let admin = this.props.user.roles.map(el => el.name === "ROLE_ADMIN");
+    // return admin ? (
+    //   <Link
+    //     to="/admin"
+    //     className={`btn-secondary btn-lg active ${s.btn_admin}`}
+    //   >
+    //     Admin
+    //   </Link>
+    // ) : null;
+  };
+
   renderCards = () => {
     return this.props.products.length > 0 ? (
       <div>
@@ -64,12 +76,7 @@ export class ProductList extends React.Component {
   render() {
     return (
       <div className={s.wrapper}>
-        <Link
-          to="/admin"
-          className={`btn-secondary btn-lg active ${s.btn_admin}`}
-        >
-          Admin
-        </Link>
+        {this.renderAdminButton()}
         {this.renderCards()}
       </div>
     );

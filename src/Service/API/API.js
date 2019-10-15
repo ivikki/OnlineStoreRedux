@@ -44,6 +44,7 @@ class APIRequest {
 
     try {
       let res = await http.post("/auth/login", { email, password });
+      store.dispatch(actionShowMessage("Login completed successfully"));
       result.status = res.status;
       result.body = res.data;
 

@@ -8,7 +8,8 @@ function mapStateToProps(state) {
     products: state.products,
     size: state.size,
     totalPages: state.totalPages,
-    pageNumber: state.pageNumber
+    pageNumber: state.pageNumber,
+    user: state.user
   };
 }
 

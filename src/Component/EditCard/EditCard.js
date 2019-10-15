@@ -4,7 +4,6 @@ import { Button } from "../Button";
 import s from "./EditCard.module.css";
 import { API } from "../../Service/API";
 import { Redirect } from "react-router-dom";
-import Modal from "../Modal/Modal.container";
 
 export class EditCard extends React.Component {
   state = {
