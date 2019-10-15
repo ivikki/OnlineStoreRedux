@@ -67,6 +67,12 @@ export class EditCard extends React.Component {
     return null;
   }
 
+  clearErrors = () => {
+    this.setState({
+      errors: {}
+    });
+  };
+
   render() {
     if (this.state.redirect) {
       return <Redirect to="/admin" />;
@@ -76,7 +82,7 @@ export class EditCard extends React.Component {
       <div className={s.wrapper}>
         <div className={s.modal}>
           <h2 className="text-center">Edit Product</h2>
-          <form>
+          <form onFocus={this.clearErrors}>
             <div className="form-group">
               <label>
                 <mark>id: {this.state.product.id}</mark>

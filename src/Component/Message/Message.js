@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import s from "./Modal.module.css";
+import s from "./Message.module.css";
 
 const modalRoot = document.getElementById("modal-root");
 
-export class Modal extends React.Component {
+export class Message extends React.Component {
   state = {
     isOpen: false
   };
@@ -31,7 +31,7 @@ export class Modal extends React.Component {
     this.setState({
       isOpen: false
     });
-    this.props.actionClearStoreEvent();
+    this.props.clearMessageErrorEvent();
   };
 
   renderModal() {

@@ -8,7 +8,7 @@ import {
   AUTH_BEARER,
   AUTH_HEADER
 } from "../../Constant";
-import { actionUserLogin } from "../../Store/Action";
+import { actionUserLogin, actionShowMessage } from "../../Store/Action";
 
 const API_BASE = process.env.REACT_APP_API_BASE;
 
@@ -48,6 +48,22 @@ class APIRequest {
       result.body = res.data;
 
       saveSession(res.data.token);
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+
+    return result;
+  }
+
+  async singUp(user) {
+    let result = {};
+    try {
+      let res = await http.post("/auth/sign-up", user);
+      saveSession(res.data.token);
+      store.dispatch(actionShowMessage("Registration completed successfully"));
+      result.status = res.status;
+      result.body = res.data;
     } catch (e) {
       result.status = e.response.status;
       result.body = e.response.data;

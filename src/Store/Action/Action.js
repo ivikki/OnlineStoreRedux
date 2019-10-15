@@ -2,7 +2,7 @@ import { createAction } from "redux-actions";
 import {
   SHOW_MESSAGE,
   SHOW_ERROR,
-  CLEAR_STORE,
+  CLEAR_MESSAGE_ERROR,
   GET_PRODUCTS,
   USER_LOGIN
 } from "./Type";
@@ -55,7 +55,7 @@ export const actionEditProduct = (id, product) => dispatch => {
 };
 
 export const actionGetProductsSuccess = createAction(GET_PRODUCTS);
-export const actionClearStore = createAction(CLEAR_STORE);
+export const actionClearMessageError = createAction(CLEAR_MESSAGE_ERROR);
 export const actionShowError = createAction(SHOW_ERROR);
 export const actionShowMessage = createAction(SHOW_MESSAGE);
 export const actionUserLogin = createAction(USER_LOGIN);

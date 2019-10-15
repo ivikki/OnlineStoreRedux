@@ -18,7 +18,7 @@ h3{
     text-align: left;
 }
 
-.wrapper .wrapper_form label{
+.wrapper .wrapper_form .label{
     margin: 20px 0 5px 5px;
 }
 
@@ -41,4 +41,10 @@ h3{
 
 .question{
     margin-top: 50px;
+}
+
+.btn_admin{
+    position: absolute;
+    top: 13px;
+    left: 10%;
 }

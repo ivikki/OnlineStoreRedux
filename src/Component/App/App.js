@@ -5,7 +5,7 @@ import { Admin } from "../Admin";
 import { AddCard } from "../AddCard";
 import { EditCard } from "../EditCard";
 import { Product } from "../Product";
-import { Modal } from "../Modal";
+import { Message } from "../Message";
 import { Registration } from "../Registration";
 import { Login } from "../Login";
 import { API } from "../../Service/API";
@@ -18,7 +18,7 @@ export class App extends React.Component {
   render() {
     return (
       <>
-        <Modal />
+        <Message />
         <Router>
           <Route path="/registration" exact component={Registration} />
           <Route path="/login" exact component={Login} />

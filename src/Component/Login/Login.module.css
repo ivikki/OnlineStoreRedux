@@ -23,3 +23,9 @@ label{
 .question{
     margin-top: 50px;
 }
+
+.btn_admin{
+    position: absolute;
+    top: 13px;
+    left: 10%;
+}

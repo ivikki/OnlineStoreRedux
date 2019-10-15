@@ -37,6 +37,9 @@ export class Login extends React.Component {
 
     return (
       <div className={s.wrapper}>
+        <Link to="/" className={`btn-primary btn-lg active ${s.btn_admin}`}>
+          Home
+        </Link>
         <h3>Login</h3>
         <form>
           <label>Email address:</label>

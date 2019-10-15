@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import { Modal } from "./Modal";
+import { Message } from "./Message";
 import { bindActionCreators } from "redux";
-import { actionClearStore } from "../../Store/Action";
+import { actionClearMessageError } from "../../Store/Action";
 
 function mapStateToProps(state) {
   return {
@@ -12,11 +12,14 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actionClearStoreEvent: bindActionCreators(actionClearStore, dispatch)
+    clearMessageErrorEvent: bindActionCreators(
+      actionClearMessageError,
+      dispatch
+    )
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Modal);
+)(Message);

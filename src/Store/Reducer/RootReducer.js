@@ -1,6 +1,6 @@
 import {
   SHOW_MESSAGE,
-  CLEAR_STORE,
+  CLEAR_MESSAGE_ERROR,
   GET_PRODUCTS,
   SHOW_ERROR,
   USER_LOGIN
@@ -21,7 +21,7 @@ export function RootReducer(state, action) {
     case SHOW_MESSAGE:
       return { ...state, message: action.payload };
 
-    case CLEAR_STORE:
+    case CLEAR_MESSAGE_ERROR:
       return { ...state, message: null, error: null };
 
     case SHOW_ERROR:
