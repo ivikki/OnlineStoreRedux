@@ -1,4 +1,5 @@
 export const initState = {
+  appIsInit: false,
   user: null,
   products: [],
   size: 3,

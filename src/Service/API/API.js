@@ -1,6 +1,7 @@
 import axios from "axios";
 import { storage } from "../Storage";
 import { store } from "../../Store/Config";
+import { redirect } from "../History";
 import {
   ACCESS_TOKEN,
   AUTH_STORE,
@@ -8,7 +9,11 @@ import {
   AUTH_BEARER,
   AUTH_HEADER
 } from "../../Constant";
-import { actionUserLogin, actionShowMessage } from "../../Store/Action";
+import {
+  actionUserLogin,
+  actionShowMessage,
+  actionClearUser
+} from "../../Store/Action";
 
 const API_BASE = process.env.REACT_APP_API_BASE;
 
@@ -57,7 +62,7 @@ class APIRequest {
     return result;
   }
 
-  async singUp(user) {
+  async signUp(user) {
     let result = {};
     try {
       let res = await http.post("/auth/sign-up", user);
@@ -71,6 +76,13 @@ class APIRequest {
     }
 
     return result;
+  }
+
+  logOut() {
+    storage.delete(AUTH_STORE);
+    delete http.defaults.headers[AUTH_HEADER];
+    store.dispatch(actionClearUser());
+    redirect("/");
   }
 
   async getProducts({ size, page } = {}) {

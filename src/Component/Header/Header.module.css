@@ -1,0 +1,15 @@
+.wrapper {
+    height: 80px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.buttons{
+    padding: 13px 0;
+    float: right;
+}
+
+.btn{
+    margin-left: 20px;
+}
+

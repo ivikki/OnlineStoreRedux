@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { Home } from "../Home";
 import { Admin } from "../Admin";
 import { AddCard } from "../AddCard";
@@ -8,18 +8,25 @@ import { Product } from "../Product";
 import { Message } from "../Message";
 import { Registration } from "../Registration";
 import { Login } from "../Login";
+import { Header } from "../Header";
 import { API } from "../../Service/API";
+import { history } from "../../Service/History";
 
 export class App extends React.Component {
   componentDidMount() {
-    API.tryRestoreSession();
+    API.tryRestoreSession().finally();
   }
 
   render() {
+    // if (!this.props.appIsInit) {
+    //   return null;
+    // }
+
     return (
       <>
         <Message />
-        <Router>
+        <Router history={history}>
+          <Route path="/" component={Header} />
           <Route path="/registration" exact component={Registration} />
           <Route path="/login" exact component={Login} />
           <Route path="/" exact component={Home} />

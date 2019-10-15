@@ -4,7 +4,8 @@ import {
   SHOW_ERROR,
   CLEAR_MESSAGE_ERROR,
   GET_PRODUCTS,
-  USER_LOGIN
+  USER_LOGIN,
+  CLEAR_USER
 } from "./Type";
 import { API } from "../../Service/API";
 
@@ -59,3 +60,4 @@ export const actionClearMessageError = createAction(CLEAR_MESSAGE_ERROR);
 export const actionShowError = createAction(SHOW_ERROR);
 export const actionShowMessage = createAction(SHOW_MESSAGE);
 export const actionUserLogin = createAction(USER_LOGIN);
+export const actionClearUser = createAction(CLEAR_USER);

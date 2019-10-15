@@ -3,7 +3,8 @@ import {
   CLEAR_MESSAGE_ERROR,
   GET_PRODUCTS,
   SHOW_ERROR,
-  USER_LOGIN
+  USER_LOGIN,
+  CLEAR_USER
 } from "../Action";
 
 export function RootReducer(state, action) {
@@ -14,6 +15,9 @@ export function RootReducer(state, action) {
       let pageNumber = action.payload.pageNumber;
       return { ...state, products, totalPages, pageNumber };
     }
+
+    case CLEAR_USER:
+      return { ...state, user: null };
 
     case USER_LOGIN:
       return { ...state, user: action.payload };

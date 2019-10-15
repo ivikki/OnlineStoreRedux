@@ -1,10 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import s from "./Admin.module.css";
 import { ProductList } from "../ProductList";
 
 export class Admin extends React.Component {
+  isAdmin = () => {
+    const { user } = this.props;
+    if (!user) {
+      return false;
+    }
+
+    return user.roles.some(el => el.name === "ROLE_ADMIN");
+  };
+
   render() {
+    if (!this.isAdmin()) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <div className={s.wrapper}>
         <Link to="/" className={`btn-primary btn-lg active ${s.btn_admin}`}>

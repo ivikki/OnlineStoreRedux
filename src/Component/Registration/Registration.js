@@ -25,8 +25,9 @@ export class Registration extends React.Component {
       lastName: this.lastNameRef.current.value,
       password: this.passwordRef.current.value
     };
-    API.singUp(user).then(res => {
+    API.signUp(user).then(res => {
       if (res.status === 200) {
+        API.tryRestoreSession();
         this.setState({
           redirect: true
         });
