@@ -4,7 +4,8 @@ import {
   GET_PRODUCTS,
   SHOW_ERROR,
   USER_LOGIN,
-  CLEAR_USER
+  CLEAR_USER,
+  APP_INIT
 } from "../Action";
 
 export function RootReducer(state, action) {
@@ -30,6 +31,9 @@ export function RootReducer(state, action) {
 
     case SHOW_ERROR:
       return { ...state, error: action.payload };
+
+    case APP_INIT:
+      return { ...state, appIsInit: true };
   }
 
   return state;

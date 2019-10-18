@@ -14,13 +14,20 @@ import { history } from "../../Service/History";
 
 export class App extends React.Component {
   componentDidMount() {
-    API.tryRestoreSession().finally();
+    API.tryRestoreSession().finally(this.props.appInitEvent);
   }
 
   render() {
-    // if (!this.props.appIsInit) {
-    //   return null;
-    // }
+    if (!this.props.appIsInit) {
+      return (
+        <div className="image">
+          <img
+            src="https://loading.io/spinners/microsoft/index.rotating-balls-spinner.svg"
+            alt="loading"
+          />
+        </div>
+      );
+    }
 
     return (
       <>

@@ -5,7 +5,8 @@ import {
   CLEAR_MESSAGE_ERROR,
   GET_PRODUCTS,
   USER_LOGIN,
-  CLEAR_USER
+  CLEAR_USER,
+  APP_INIT
 } from "./Type";
 import { API } from "../../Service/API";
 
@@ -61,3 +62,4 @@ export const actionShowError = createAction(SHOW_ERROR);
 export const actionShowMessage = createAction(SHOW_MESSAGE);
 export const actionUserLogin = createAction(USER_LOGIN);
 export const actionClearUser = createAction(CLEAR_USER);
+export const actionAppInit = createAction(APP_INIT);

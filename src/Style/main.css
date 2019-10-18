@@ -20,3 +20,13 @@ input::-webkit-inner-spin-button {
 a:hover{
   text-decoration: none;
 }
+
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img{
+  margin-top: 100px;
+}
