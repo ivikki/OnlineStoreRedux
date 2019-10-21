@@ -125,8 +125,33 @@ class APIRequest {
     return await http.delete("/product/" + id);
   }
 
-  async editProduct(id, product) {
-    let response = await http.put("/product/" + id, product);
+  async editProduct(product) {
+    let response = await http.put("/product", product);
+
+    return {
+      status: response.status,
+      body: response.data
+    };
+  }
+
+  async sandComment(productId, text) {
+    let result = {};
+    try {
+      let response = await http.post("/comment/product", {
+        product: { id: productId },
+        text
+      });
+      result.status = response.status;
+      result.body = response.data;
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+    return result;
+  }
+
+  async getComment(productId) {
+    let response = await http.get("/comment/product/" + productId);
 
     return {
       status: response.status,

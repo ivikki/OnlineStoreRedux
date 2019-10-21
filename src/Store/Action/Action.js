@@ -45,11 +45,23 @@ export const actionDeleteProduct = id => dispatch => {
 };
 
 export const actionEditProduct = (id, product) => dispatch => {
-  return API.editProduct(id, product).then(res => {
+  return API.editProduct(product).then(res => {
     if (res.status === 200) {
       dispatch(actionShowMessage("Success. Product edit. Changes accepted"));
     } else {
       dispatch(actionShowError("Failure. Product not edit"));
+    }
+
+    return res;
+  });
+};
+
+export const actionAddComment = (id, product) => dispatch => {
+  return API.sandComment(id, product).then(res => {
+    if (res.status === 200) {
+      dispatch(actionShowMessage("Success. Comment added"));
+    } else {
+      dispatch(actionShowError("Failure. Comment not added"));
     }
 
     return res;

@@ -22,7 +22,6 @@ export class EditCard extends React.Component {
   }
 
   editProduct = () => {
-    const id = this.props.match.params.id;
     let product = {
       id: this.state.product.id,
       title: this.state.product.title,
@@ -31,7 +30,7 @@ export class EditCard extends React.Component {
       image: this.state.product.image,
       inStock: String(this.state.product.inStock) === "true"
     };
-    this.props.editProductEvent(id, product).then(res => {
+    this.props.editProductEvent(product).then(res => {
       if (res.status === 200) {
         this.setState({
           redirect: true
