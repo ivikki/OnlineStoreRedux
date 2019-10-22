@@ -1,13 +1,7 @@
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Product } from "./Product";
+import { Comment } from "./Comment";
+import { bindActionCreators } from "redux";
 import { actionAddComment } from "../../Store/Action";
-
-function mapStateToProps(state) {
-  return {
-    user: state.user
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -16,6 +10,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
-)(Product);
+)(Comment);

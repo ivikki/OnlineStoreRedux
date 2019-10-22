@@ -134,10 +134,11 @@ class APIRequest {
     };
   }
 
-  async sandComment(productId, text) {
+  async sandComment(productId, text, commentId = null) {
     let result = {};
     try {
       let response = await http.post("/comment/product", {
+        parent: { id: commentId },
         product: { id: productId },
         text
       });

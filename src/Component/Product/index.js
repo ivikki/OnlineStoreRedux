@@ -1,3 +1,3 @@
-import Product from "./Product.container";
+import { Product } from "./Product";
 
 export { Product };

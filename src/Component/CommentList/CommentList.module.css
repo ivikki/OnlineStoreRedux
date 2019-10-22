@@ -1,0 +1,26 @@
+.comment_list{
+    font-size: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.img{
+    margin: 0 auto;
+    display: block;
+}
+
+.btn_sand{
+    position: absolute;
+    right: 15px;
+    top: 50px;
+}
+
+.form{
+    position: relative;
+}
+
+.form textarea{
+    min-height: 150px;
+}
+
+
