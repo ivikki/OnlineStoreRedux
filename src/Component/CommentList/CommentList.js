@@ -12,16 +12,19 @@ export class CommentList extends React.Component {
   };
 
   componentDidMount() {
+    this.getComments();
+  }
+
+  getComments = () => {
     const id = this.props.productId;
     API.getComment(id).then(res => {
-      console.log(res.body.content);
       this.setState({
         comments: res.body.content
       });
     });
-  }
+  };
 
-  sandComment = e => {
+  addComment = e => {
     e.preventDefault();
     const id = this.props.productId;
     const text = this.state.textComment;
@@ -32,7 +35,8 @@ export class CommentList extends React.Component {
           text,
           id: res.body.id,
           user: this.props.user,
-          date: res.body.date
+          date: res.body.date,
+          childs: []
         });
         this.setState({
           textComment: "",
@@ -46,7 +50,7 @@ export class CommentList extends React.Component {
     });
   };
 
-  sandTextComment = e => {
+  addTextComment = e => {
     let textComment = e.target.value;
     this.setState({
       textComment
@@ -73,35 +77,36 @@ export class CommentList extends React.Component {
     });
   };
 
-  showComment() {
+  showAllComments = comments => {
+    return comments.map(el => (
+      <div key={el.id} className={s.comment_wrapper}>
+        <Comment
+          comment={el}
+          commentId={el.id}
+          productId={this.props.productId}
+          getComments={this.getComments}
+        />
+        {el.childs.length > 0 ? this.showAllComments(el.childs) : null}
+      </div>
+    ));
+  };
+
+  showComment = () => {
     if (this.state.comments.length > 0) {
       return (
-        <div>
+        <div className={s.comment}>
           <h4>Comments</h4>
-          {this.state.comments.map(el => (
-            <Comment
-              comment={el}
-              key={el.id}
-              commentId={el.id}
-              productId={this.props.productId}
-            />
-          ))}
-          {/*{this.state.comments.map(el =>*/}
-          {/*el.childs.length > 0 ? (*/}
-          {/*<Comment*/}
-          {/*comment={el}*/}
-          {/*key={el.id}*/}
-          {/*commentId={el.id}*/}
-          {/*productId={this.props.productId}*/}
-          {/*/>*/}
-          {/*) : null*/}
-          {/*)}*/}
+          {this.showAllComments(this.state.comments)}
         </div>
       );
     }
 
-    return <h4>No comments. Be the first.</h4>;
-  }
+    return (
+      <div className={s.comment}>
+        <h4>No comments. Be the first</h4>
+      </div>
+    );
+  };
 
   render() {
     return (
@@ -114,15 +119,19 @@ export class CommentList extends React.Component {
             className="form-control"
             placeholder="Enter your comment..."
             value={this.state.textComment}
-            onChange={this.sandTextComment}
+            onChange={this.addTextComment}
           />
           {this.showError()}
           <Button
             className={`btn-warning ${s.btn_sand}`}
-            onClick={this.sandComment}
+            onClick={this.addComment}
           >
             Send comment
           </Button>
+          <span className={s.counter}>
+            left:
+            {300 - this.state.textComment.length}
+          </span>
         </form>
       </div>
     );

@@ -17,10 +17,27 @@
 
 .form{
     position: relative;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .form textarea{
     min-height: 150px;
+    padding-right: 200px;
 }
 
+.comment_wrapper{
+    margin-left: 60px;
+}
+
+.comment h4{
+    margin-left: 55px;
+}
+
+.counter{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 15px;
+}
 

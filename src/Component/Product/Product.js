@@ -50,18 +50,16 @@ export class Product extends React.Component {
         <Link to="/">
           <Button className={`btn-lg btn-warning ${s.btn}`}>Close</Button>
         </Link>
-        <div className={s.product_wrapper}>
-          <div className={s.product}>
-            <div className={s.about}>
-              <mark>id: {this.state.product.id}</mark>
-              <p>Name: {this.state.product.title}</p>
-              <p>Price: {this.state.product.price}$</p>
-              <p>Quantity: {this.state.product.quantity}</p>
-            </div>
-            {this.renderStockImage()}
+        <div className={s.product}>
+          <div className={s.about}>
+            <mark>id: {this.state.product.id}</mark>
+            <p>Name: {this.state.product.title}</p>
+            <p>Price: {this.state.product.price}$</p>
+            <p>Quantity: {this.state.product.quantity}</p>
           </div>
-          <CommentList productId={this.props.match.params.id} />
+          {this.renderStockImage()}
         </div>
+        <CommentList productId={this.props.match.params.id} />
       </div>
     );
   }

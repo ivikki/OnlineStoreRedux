@@ -57,7 +57,7 @@ export const actionEditProduct = (id, product) => dispatch => {
 };
 
 export const actionAddComment = (productId, text, commentId) => dispatch => {
-  return API.sandComment(productId, text, commentId).then(res => {
+  return API.addComment(productId, text, commentId).then(res => {
     if (res.status === 200) {
       dispatch(actionShowMessage("Success. Comment added"));
     }

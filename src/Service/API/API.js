@@ -134,7 +134,7 @@ class APIRequest {
     };
   }
 
-  async sandComment(productId, text, commentId = null) {
+  async addComment(productId, text, commentId = null) {
     let result = {};
     try {
       let response = await http.post("/comment/product", {
@@ -158,6 +158,24 @@ class APIRequest {
       status: response.status,
       body: response.data
     };
+  }
+
+  async editComment(productId, text, commentId, parentId) {
+    let result = {};
+    try {
+      let response = await http.put("/comment/product/", {
+        id: commentId,
+        parent: { id: parentId },
+        product: { id: productId },
+        text
+      });
+      result.status = response.status;
+      result.body = response.data;
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+    return result;
   }
 }
 

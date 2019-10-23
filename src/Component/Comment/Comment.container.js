@@ -3,6 +3,12 @@ import { Comment } from "./Comment";
 import { bindActionCreators } from "redux";
 import { actionAddComment } from "../../Store/Action";
 
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     addCommentEvent: bindActionCreators(actionAddComment, dispatch)
@@ -10,6 +16,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Comment);

@@ -12,12 +12,8 @@
     right: 20px;
 }
 
-.product_wrapper{
-    width: 90%;
-    margin: 0 auto;
-}
-
 .product{
+    width: 90%;
     margin: 80px auto;
     border-radius: 10px;
     background-color: #feff9e;
