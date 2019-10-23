@@ -7,6 +7,7 @@ import { EditCard } from "../EditCard";
 import { Product } from "../Product";
 import { Message } from "../Message";
 import { Registration } from "../Registration";
+import { Category } from "../Category";
 import { Login } from "../Login";
 import { Header } from "../Header";
 import { API } from "../../Service/API";
@@ -41,6 +42,7 @@ export class App extends React.Component {
           <Route path="/admin/add" component={AddCard} />
           <Route path="/admin/edit/:id" component={EditCard} />
           <Route path="/product/:id" component={Product} />
+          <Route path="/admin/category" component={Category} />
         </Router>
       </>
     );

@@ -1,0 +1,18 @@
+.wrapper{
+    margin: 5px auto;
+    width: 90%;
+}
+
+.btn{
+    position: absolute;
+    top: 13px;
+    left: 10%;
+}
+
+.button_save{
+    margin-left: 10px;
+}
+input{
+    height: 35px;
+    padding: 5px;
+}

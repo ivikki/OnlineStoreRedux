@@ -12,22 +12,16 @@ export class Header extends React.Component {
   renderLoginButtons = () => {
     return this.props.user !== null ? (
       <div className={s.buttons}>
-        <Button
-          onClick={this.logOut}
-          className={`btn-primary btn-lg active ${s.btn}`}
-        >
+        <Button onClick={this.logOut} className={`btn-primary btn-lg ${s.btn}`}>
           Login Out
         </Button>
       </div>
     ) : (
       <div className={s.buttons}>
-        <Link
-          to="/registration"
-          className={`btn-primary btn-lg active ${s.btn}`}
-        >
+        <Link to="/registration" className={`btn-primary btn-lg ${s.btn}`}>
           Sign Up
         </Link>
-        <Link to="/login" className={`btn-primary btn-lg active ${s.btn}`}>
+        <Link to="/login" className={`btn-primary btn-lg ${s.btn}`}>
           Login
         </Link>
       </div>

@@ -113,12 +113,18 @@ class APIRequest {
   }
 
   async addProduct(product) {
-    let response = await http.post("/product/", product);
+    let result = {};
+    try {
+      let newProduct = { ...product, category: { id: 1 } };
+      let response = await http.post("/product/", newProduct);
 
-    return {
-      status: response.status,
-      body: response.data
-    };
+      result.status = response.status;
+      result.body = response.data;
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+    return result;
   }
 
   async deleteProduct(id) {
@@ -126,12 +132,18 @@ class APIRequest {
   }
 
   async editProduct(product) {
-    let response = await http.put("/product", product);
+    let result = {};
+    try {
+      let newProduct = { ...product, category: { id: 1 } };
+      let response = await http.put("/product", newProduct);
 
-    return {
-      status: response.status,
-      body: response.data
-    };
+      result.status = response.status;
+      result.body = response.data;
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+    return result;
   }
 
   async addComment(productId, text, commentId = null) {
@@ -176,6 +188,33 @@ class APIRequest {
       result.body = e.response.data;
     }
     return result;
+  }
+
+  async addCategory(text) {
+    let result = {};
+    try {
+      let response = await http.post("/category", {
+        name: text,
+        parent: { id: 1 },
+        slug: text
+      });
+
+      result.status = response.status;
+      result.body = response.data;
+    } catch (e) {
+      result.status = e.response.status;
+      result.body = e.response.data;
+    }
+    return result;
+  }
+
+  async getCategory() {
+    let response = await http.get("/category");
+
+    return {
+      status: response.status,
+      body: response.data
+    };
   }
 }
 

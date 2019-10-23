@@ -92,16 +92,12 @@ export class CommentList extends React.Component {
   };
 
   showComment = () => {
-    if (this.state.comments.length > 0) {
-      return (
-        <div className={s.comment}>
-          <h4>Comments</h4>
-          {this.showAllComments(this.state.comments)}
-        </div>
-      );
-    }
-
-    return (
+    return this.state.comments.length > 0 ? (
+      <div className={s.comment}>
+        <h4>Comments</h4>
+        {this.showAllComments(this.state.comments)}
+      </div>
+    ) : (
       <div className={s.comment}>
         <h4>No comments. Be the first</h4>
       </div>

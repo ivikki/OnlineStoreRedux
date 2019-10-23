@@ -20,8 +20,14 @@ export class Admin extends React.Component {
 
     return (
       <div className={s.wrapper}>
-        <Link to="/" className={`btn-primary btn-lg active ${s.btn_admin}`}>
+        <Link to="/" className={`btn-primary btn-lg ${s.btn_admin}`}>
           Home
+        </Link>
+        <Link
+          to="/admin/category"
+          className={`btn-success btn-lg ${s.btn_category}`}
+        >
+          Category
         </Link>
         <h2 className="display-4">Product List</h2>
         <Link to="/admin/add" className={`btn btn-lg btn-success ${s.btn}`}>

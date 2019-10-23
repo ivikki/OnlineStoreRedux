@@ -44,7 +44,7 @@ export const actionDeleteProduct = id => dispatch => {
   });
 };
 
-export const actionEditProduct = (id, product) => dispatch => {
+export const actionEditProduct = product => dispatch => {
   return API.editProduct(product).then(res => {
     if (res.status === 200) {
       dispatch(actionShowMessage("Success. Product edit. Changes accepted"));
