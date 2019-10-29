@@ -3,6 +3,10 @@ import { Card } from "../Card";
 import s from "./ProductList.module.css";
 
 export class ProductList extends React.Component {
+  state = {
+    products: []
+  };
+
   componentDidMount() {
     this.changePage(this.props.pageNumber);
   }
@@ -16,6 +20,18 @@ export class ProductList extends React.Component {
       this.changePage(this.props.pageNumber);
     }
   };
+
+  // getProductList = () => {
+  //   let products = this.props.products.map(el => {
+  //     if (el.category.id === this.props.categoryId) {
+  //       return el;
+  //     }
+  //   });
+  //   // this.setState({
+  //   //   products
+  //   // });
+  //   console.log(products);
+  // };
 
   getClassName(num) {
     return this.props.pageNumber === num ? s.page + " " + s.active : s.page;
@@ -60,6 +76,11 @@ export class ProductList extends React.Component {
   };
 
   render() {
-    return <div className={s.wrapper}>{this.renderCards()}</div>;
+    return (
+      <div className={s.wrapper}>
+        {/*{this.getProductList()}*/}
+        {this.renderCards()}
+      </div>
+    );
   }
 }

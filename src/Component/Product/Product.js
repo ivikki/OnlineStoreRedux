@@ -45,17 +45,18 @@ export class Product extends React.Component {
   };
 
   render() {
+    let { id, title, price, quantity } = this.state.product;
     return (
       <div className={s.wrapper}>
-        <Link to="/">
+        <Link to="/category/id">
           <Button className={`btn-lg btn-warning ${s.btn}`}>Close</Button>
         </Link>
         <div className={s.product}>
           <div className={s.about}>
-            <mark>id: {this.state.product.id}</mark>
-            <p>Name: {this.state.product.title}</p>
-            <p>Price: {this.state.product.price}$</p>
-            <p>Quantity: {this.state.product.quantity}</p>
+            <mark>id: {id}</mark>
+            <p>Name: {title}</p>
+            <p>Price: {price}$</p>
+            <p>Quantity: {quantity}</p>
           </div>
           {this.renderStockImage()}
         </div>

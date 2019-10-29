@@ -31,14 +31,15 @@ export class Comment extends React.Component {
 
   handleEditComment = e => {
     e.preventDefault();
-    this.finishEdit();
     const commentId = this.props.commentId;
     const productId = this.props.productId;
     const text = this.state.textComment;
     const parentId = null;
-    console.log(commentId, productId, text, parentId);
     API.editComment(productId, text, commentId, parentId).then(res => {
       if (res.status === 200) {
+        this.setState({
+          isEdit: false
+        });
         this.props.getComments();
       }
     });
@@ -141,12 +142,6 @@ export class Comment extends React.Component {
     });
   };
 
-  finishEdit = () => {
-    this.setState({
-      isEdit: false
-    });
-  };
-
   showEditButton = () => {
     if (this.props.user.id === this.props.comment.user.id) {
       return (
@@ -175,8 +170,13 @@ export class Comment extends React.Component {
             value={this.state.textComment}
             onChange={this.saveEditText}
             className={s.input}
-            onBlur={this.handleEditComment}
           />
+          <Button
+            className={`btn-warning ${s.btn_sand}`}
+            onClick={this.handleEditComment}
+          >
+            Send
+          </Button>
           <span className={s.counter}>
             left:{300 - this.state.textComment.length}
           </span>

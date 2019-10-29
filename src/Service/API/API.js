@@ -216,6 +216,15 @@ class APIRequest {
       body: response.data
     };
   }
+
+  async filterCategory(name) {
+    let response = await http.get("/category/filter?prefixName=" + name);
+    console.log(response);
+    return {
+      status: response.status,
+      body: response.data
+    };
+  }
 }
 
 function saveSession({ accessToken, refreshToken }) {

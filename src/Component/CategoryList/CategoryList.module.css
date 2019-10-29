@@ -1,0 +1,37 @@
+.wrapper{
+    margin: 5px auto 30px;
+    width: 90%;
+}
+
+.btn{
+    position: absolute;
+    top: 13px;
+    left: 10%;
+}
+
+.button_save{
+    margin-left: 10px;
+}
+
+input{
+    height: 35px;
+    padding: 5px;
+}
+
+.category_wrapper{
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.category_wrapper .category{
+    width: 18%;
+    /*border: 1px solid grey;*/
+    /*border-radius: 5px;*/
+    margin: 10px;
+    /*min-height: 100px;*/
+}

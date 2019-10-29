@@ -12,10 +12,7 @@ export class Home extends React.Component {
 
     let admin = user.roles.some(el => el.name === "ROLE_ADMIN");
     return admin ? (
-      <Link
-        to="/admin"
-        className={`btn-secondary btn-lg active ${s.btn_admin}`}
-      >
+      <Link to="/admin" className={`btn-secondary btn-lg ${s.btn_admin}`}>
         Admin
       </Link>
     ) : null;
@@ -25,8 +22,11 @@ export class Home extends React.Component {
     return (
       <div className={s.wrapper}>
         {this.renderAdminButton()}
+        <Link to="/" className={`btn btn-success btn-lg ${s.btn_category}`}>
+          Category
+        </Link>
         <h2 className="display-4">Product List</h2>
-        <ProductList isAdmin={false} />
+        <ProductList isAdmin={false} categoryId={this.props.match.params.id} />
       </div>
     );
   }
