@@ -6,7 +6,8 @@ import {
   GET_PRODUCTS,
   USER_LOGIN,
   CLEAR_USER,
-  APP_INIT
+  APP_INIT,
+  GET_CATEGORIES
 } from "./Type";
 import { API } from "../../Service/API";
 

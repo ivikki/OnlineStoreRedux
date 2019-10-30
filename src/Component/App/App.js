@@ -9,6 +9,7 @@ import { Message } from "../Message";
 import { SelectCategory } from "../SelectCategory";
 import { Registration } from "../Registration";
 import { Category } from "../Category";
+import { EditCategory } from "../EditCategory";
 import { CategoryList } from "../CategoryList";
 import { Login } from "../Login";
 import { Header } from "../Header";
@@ -43,10 +44,11 @@ export class App extends React.Component {
           <Route path="/" exact component={CategoryList} />
           <Route path="/admin" exact component={Admin} />
           <Route path="/admin/add" component={AddCard} />
-          <Route path="/admin/edit/:id" component={EditCard} />
+          <Route exact path="/admin/edit/:id" component={EditCard} />
           <Route path="/product/:id" component={Product} />
           <Route path="/admin/category" component={Category} />
           <Route path="/select" component={SelectCategory} />
+          <Route path="/admin/edit/category/:id" component={EditCategory} />
         </Router>
       </>
     );

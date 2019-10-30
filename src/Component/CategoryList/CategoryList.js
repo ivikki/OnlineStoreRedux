@@ -5,24 +5,26 @@ import { API } from "../../Service/API";
 
 export class CategoryList extends React.Component {
   state = {
-    category: []
+    categories: []
   };
 
   componentDidMount() {
-    API.getCategory().then(res => {
-      this.setState({
-        category: res.body.content
-      });
+    API.getCategories().then(res => {
+      if (res.status === 200) {
+        this.setState({
+          categories: res.body.content
+        });
+      }
     });
   }
 
-  showCategory = category => {
-    return category.map(el => (
+  showCategories = categories => {
+    return categories.map(el => (
       <ul key={el.id} className={s.category}>
         <li>
           <Link to={`/category/${el.id}`}>{el.name}</Link>
         </li>
-        {el.childs.length > 0 ? this.showCategory(el.childs) : null}
+        {el.childs.length > 0 ? this.showCategories(el.childs) : null}
       </ul>
     ));
   };
@@ -32,8 +34,8 @@ export class CategoryList extends React.Component {
       <div className={s.wrapper}>
         <h2 className="text-center">Select category</h2>
         <div className={s.category_wrapper}>
-          {this.state.category.length > 0
-            ? this.showCategory(this.state.category)
+          {this.state.categories.length > 0
+            ? this.showCategories(this.state.categories)
             : null}
         </div>
       </div>

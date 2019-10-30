@@ -30,8 +30,10 @@ input{
 
 .category_wrapper .category{
     width: 18%;
-    /*border: 1px solid grey;*/
-    /*border-radius: 5px;*/
     margin: 10px;
-    /*min-height: 100px;*/
 }
+
+.category_wrapper h3{
+    margin: 0 auto;
+}
+

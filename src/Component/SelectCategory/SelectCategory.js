@@ -10,6 +10,7 @@ export class SelectCategory extends React.Component {
     this.setState({
       selectedOption
     });
+    this.props.getParentId(selectedOption);
   };
 
   render() {
