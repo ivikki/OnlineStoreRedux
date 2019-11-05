@@ -2,11 +2,12 @@ import { connect } from "react-redux";
 import { Message } from "./Message";
 import { bindActionCreators } from "redux";
 import { actionClearMessageError } from "../../Store/Action";
+import { getError, getMessage } from "../../Store/Selector";
 
 function mapStateToProps(state) {
   return {
-    error: state.error,
-    message: state.message
+    error: getError(state),
+    message: getMessage(state)
   };
 }
 

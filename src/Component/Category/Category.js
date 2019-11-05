@@ -1,31 +1,21 @@
 import React from "react";
-import s from "./Category.module.css";
 import { Button } from "../Button";
+import { AddCategoryForm } from "./AddCategoryForm";
 import { Link } from "react-router-dom";
 import { API } from "../../Service/API";
-import { SelectCategory } from "../SelectCategory";
+
+import s from "./Category.module.css";
 
 export class Category extends React.Component {
   state = {
-    inputText: "",
-    slugText: "",
     categories: [],
-    parentId: ""
+    selectKey: 0,
+    errors: {}
   };
 
-  getAllCategories = async inputValue => {
-    let res;
-    if (inputValue === "") {
-      res = await API.getCategories();
-    } else {
-      res = await API.filterCategory(inputValue);
-    }
-    this.setState({
-      categories: res.body.content
-    });
-
-    return this.showCategories(res.body.content);
-  };
+  componentDidMount() {
+    this.getCategories();
+  }
 
   getCategories = async () => {
     await API.getCategories().then(res => {
@@ -37,26 +27,27 @@ export class Category extends React.Component {
     });
   };
 
-  saveInputText = e => {
-    let inputText = e.target.value;
-    this.setState({
-      inputText
-    });
+  handleSubmit = values => {
+    this.addCategory(values);
   };
 
-  addCategory = e => {
-    e.preventDefault();
-    let text = this.state.inputText;
-    let slug = this.state.slugText || this.state.inputText;
-    let parentId = this.state.parentId;
-    API.addCategory(text, parentId, slug).then(res => {
+  addCategory = values => {
+    let name = values.nameCategory;
+    let slug = values.slugCategory || values.nameCategory;
+    let parentId = values.parent ? values.parent.value : null;
+    API.addCategory(name, slug, parentId).then(res => {
       if (res.status === 200) {
         this.props.showMessageEvent("Success. Category added");
-        this.setState({
-          inputText: "",
-          slugText: ""
-        });
         this.getCategories();
+        let selectKey = this.state.selectKey++;
+        this.setState({
+          selectKey,
+          errors: {}
+        });
+      } else {
+        this.setState({
+          errors: res.body.errors
+        });
       }
     });
   };
@@ -68,17 +59,6 @@ export class Category extends React.Component {
         this.getCategories();
       }
     });
-  };
-
-  showCategories = categories => {
-    let cat = [];
-    categories.forEach(el => {
-      cat.push({ value: el.id, label: el.name });
-      if (el.childs && el.childs.length > 0) {
-        cat = [...cat, ...this.showCategories(el.childs)];
-      }
-    });
-    return cat;
   };
 
   showCategoriesList = (categories, deep = 0) => {
@@ -108,53 +88,22 @@ export class Category extends React.Component {
     ));
   };
 
-  getParentId = selectedOption => {
-    this.setState({
-      parentId: selectedOption.value
-    });
-  };
-
-  saveSlugText = e => {
-    let slugText = e.target.value;
-    this.setState({
-      slugText
-    });
-  };
-
   render() {
     return (
       <div className={s.wrapper}>
         <Link to={"/admin"}>
           <Button className={`btn-lg btn-secondary ${s.btn}`}>Back</Button>
         </Link>
-        <h2 className="text-center">Category</h2>
+        <h2 className="text-center">Add category</h2>
         <div className={s.category_list}>
-          <form className={s.form}>
-            <h3>Add new category</h3>
-            <label>Name category:</label>
-            <input
-              className="form-control"
-              onChange={this.saveInputText}
-              value={this.state.inputText}
+          <div className={s.form}>
+            <AddCategoryForm
+              onSubmit={this.handleSubmit}
+              addCategory={this.addCategory}
+              selectKey={this.state.selectKey}
+              errors={this.state.errors}
             />
-            <label>Slug:</label>
-            <input
-              className="form-control"
-              onChange={this.saveSlugText}
-              value={this.state.slugText}
-            />
-            <label>Parent category:</label>
-            <SelectCategory
-              getAllCategories={this.getAllCategories}
-              getParentId={this.getParentId}
-            />
-            <Button
-              className={"btn btn-lg btn-info " + s.button_save}
-              onClick={this.addCategory}
-            >
-              Save
-            </Button>
-          </form>
+          </div>
           <table className={s.table}>
             <thead>
               <tr>

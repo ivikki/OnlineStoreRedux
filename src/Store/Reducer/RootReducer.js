@@ -8,7 +8,18 @@ import {
   APP_INIT
 } from "../Action";
 
-export function RootReducer(state, action) {
+const initState = {
+  appIsInit: false,
+  user: null,
+  products: [],
+  size: 3,
+  pageNumber: 0,
+  totalPages: 0,
+  error: null,
+  message: null
+};
+
+export function RootReducer(state = initState, action) {
   switch (action.type) {
     case GET_PRODUCTS: {
       let products = action.payload.content;

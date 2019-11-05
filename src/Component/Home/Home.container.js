@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import { Home } from "./Home";
+import { getUser } from "../../Store/Selector";
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    user: getUser(state)
   };
 }
 

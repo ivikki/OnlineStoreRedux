@@ -2,14 +2,21 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { ProductList } from "./ProductList";
 import { actionGetProducts } from "../../Store/Action";
+import {
+  getPageNumber,
+  getProducts,
+  getSize,
+  getTotalPages,
+  getUser
+} from "../../Store/Selector";
 
 function mapStateToProps(state) {
   return {
-    products: state.products,
-    size: state.size,
-    totalPages: state.totalPages,
-    pageNumber: state.pageNumber,
-    user: state.user
+    products: getProducts(state),
+    size: getSize(state),
+    totalPages: getTotalPages(state),
+    pageNumber: getPageNumber(state),
+    user: getUser(state)
   };
 }
 

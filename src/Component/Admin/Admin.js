@@ -27,7 +27,7 @@ export class Admin extends React.Component {
           to="/admin/category"
           className={`btn-success btn-lg ${s.btn_category}`}
         >
-          Add category
+          Categories
         </Link>
         <h2 className="display-4">Product List</h2>
         <Link to="/admin/add" className={`btn btn-lg btn-success ${s.btn}`}>

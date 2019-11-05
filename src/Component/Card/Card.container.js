@@ -2,10 +2,11 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Card } from "./Card";
 import { actionDeleteProduct } from "../../Store/Action";
+import { getProducts } from "../../Store/Selector";
 
 function mapStateToProps(state) {
   return {
-    products: state.products
+    products: getProducts(state)
   };
 }
 

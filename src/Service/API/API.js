@@ -190,11 +190,11 @@ class APIRequest {
     return result;
   }
 
-  async addCategory(text, parentId = 0, slug) {
+  async addCategory(name, slug, parentId) {
     let result = {};
     try {
       let response = await http.post("/category", {
-        name: text,
+        name,
         parent: { id: parentId },
         slug
       });
@@ -208,7 +208,16 @@ class APIRequest {
     return result;
   }
 
-  async getCategories(id = "") {
+  async getCategories() {
+    let response = await http.get("/category");
+
+    return {
+      status: response.status,
+      body: response.data
+    };
+  }
+
+  async getCategory(id) {
     let response = await http.get("/category/" + id);
 
     return {
@@ -234,11 +243,11 @@ class APIRequest {
     return await http.delete("/category/" + id);
   }
 
-  async editCategory(commentId, name, slug, parentId) {
+  async editCategory(categoryId, name, slug, parentId) {
     let result = {};
     try {
       let response = await http.put("/category/", {
-        id: commentId,
+        id: categoryId,
         parent: { id: parentId },
         slug,
         name

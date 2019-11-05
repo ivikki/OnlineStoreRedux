@@ -9,24 +9,13 @@
     left: 10%;
 }
 
-.button_save{
-    margin-top: 20px;
-}
-
-.category_list{
+.form_wrapper{
+    margin: 20px auto;
     background-color: white;
     width: 90%;
-    margin: 20px auto;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
 }
 
-.form{
-    width: 60%;
-    margin: 0 auto;
-}
 
-.form label{
-    margin: 20px 0;
-}
