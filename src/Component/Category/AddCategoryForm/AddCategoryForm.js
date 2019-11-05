@@ -15,7 +15,9 @@ class AddCategoryForm extends React.Component {
       res = await API.filterCategory(inputValue);
     }
 
-    return this.showCategories(res.body.content);
+    let allCategories = this.showCategories(res.body.content);
+    allCategories.unshift({ value: null, label: "None" });
+    return allCategories;
   };
 
   showCategories = categories => {
