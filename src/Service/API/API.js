@@ -115,7 +115,7 @@ class APIRequest {
   async addProduct(product) {
     let result = {};
     try {
-      let newProduct = { ...product, category: { id: 1 } };
+      let newProduct = { ...product };
       let response = await http.post("/product/", newProduct);
 
       result.status = response.status;

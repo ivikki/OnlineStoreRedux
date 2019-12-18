@@ -12,36 +12,8 @@
     padding: 15px;
 }
 
-.buttons{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.buttons .button{
-    width: 100px;
-    display: block;
-}
-
-.buttons .button:first-child{
-    margin-right: 20px;
-}
-
 .modal h2{
     margin-bottom: 20px;
 }
 
-.modal label{
-    margin: 10px 5px;
-    display: block;
-    font-weight: bold;
-}
 
-.modal .status{
-    display: inline-block;
-    margin: 20px 10px 20px 5px;
-}
-
-span{
-    display: block;
-}

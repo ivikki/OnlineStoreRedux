@@ -14,17 +14,17 @@ export class Category extends React.Component {
   };
 
   componentDidMount() {
-    this.getCategories();
+    this.props.getCategories();
   }
 
   getCategories = async () => {
-    await API.getCategories().then(res => {
-      if (res.status === 200) {
-        this.setState({
-          categories: res.body.content
-        });
-      }
-    });
+    // await API.getCategories().then(res => {
+    //   if (res.status === 200) {
+    //     this.setState({
+    //       categories: res.body.content
+    //     });
+    //   }
+    // });
   };
 
   handleSubmit = values => {
@@ -35,28 +35,15 @@ export class Category extends React.Component {
     let name = values.nameCategory;
     let slug = values.slugCategory || values.nameCategory;
     let parentId = values.parent ? values.parent.value : null;
-    API.addCategory(name, slug, parentId).then(res => {
-      if (res.status === 200) {
-        this.props.showMessageEvent("Success. Category added");
-        this.getCategories();
-        let selectKey = this.state.selectKey++;
-        this.setState({
-          selectKey,
-          errors: {}
-        });
-      } else {
-        this.setState({
-          errors: res.body.errors
-        });
-      }
-    });
+
+    this.props.addCategory({ name, slug, parentId });
   };
 
   deleteCategory = id => {
     API.deleteCategory(id).then(res => {
       if (res.status === 200) {
         this.props.showMessageEvent("Success. Category deleted");
-        this.getCategories();
+        this.props.getCategories();
       }
     });
   };
@@ -101,7 +88,7 @@ export class Category extends React.Component {
               onSubmit={this.handleSubmit}
               addCategory={this.addCategory}
               selectKey={this.state.selectKey}
-              errors={this.state.errors}
+              errors={this.props.errors}
             />
           </div>
           <table className={s.table}>
@@ -111,7 +98,7 @@ export class Category extends React.Component {
                 <th>Slug</th>
               </tr>
             </thead>
-            <tbody>{this.showCategoriesList(this.state.categories)}</tbody>
+            <tbody>{this.showCategoriesList(this.props.categories)}</tbody>
           </table>
         </div>
       </div>

@@ -7,7 +7,10 @@ import {
   USER_LOGIN,
   CLEAR_USER,
   APP_INIT,
-  GET_CATEGORIES
+  GET_CATEGORIES,
+  GET_CATEGORIES_SUCCESS,
+  ADD_CATEGORY,
+  ADD_CATEGORY_SUCCESS
 } from "./Type";
 import { API } from "../../Service/API";
 
@@ -67,10 +70,18 @@ export const actionAddComment = (productId, text, commentId) => dispatch => {
   });
 };
 
-export const actionGetProductsSuccess = createAction(GET_PRODUCTS);
+// export const actionGetProductsSuccess = createAction(GET_PRODUCTS);
+export const actionGetProductsSuccess = payload => ({
+  type: GET_PRODUCTS,
+  payload
+});
 export const actionClearMessageError = createAction(CLEAR_MESSAGE_ERROR);
 export const actionShowError = createAction(SHOW_ERROR);
 export const actionShowMessage = createAction(SHOW_MESSAGE);
 export const actionUserLogin = createAction(USER_LOGIN);
 export const actionClearUser = createAction(CLEAR_USER);
 export const actionAppInit = createAction(APP_INIT);
+export const actionGetCategories = createAction(GET_CATEGORIES);
+export const actionGetCategoriesSuccess = createAction(GET_CATEGORIES_SUCCESS);
+export const actionAddCategory = createAction(ADD_CATEGORY);
+export const actionAddCategorySuccess = createAction(ADD_CATEGORY_SUCCESS);

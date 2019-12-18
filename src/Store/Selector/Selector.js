@@ -29,3 +29,11 @@ export function getError(state) {
 export function getMessage(state) {
   return state.app.message;
 }
+
+export function getCategories(state) {
+  return state.category.categories;
+}
+
+export function getCategoryErrors(state) {
+  return state.category.errors;
+}

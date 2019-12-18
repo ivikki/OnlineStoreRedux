@@ -93,6 +93,6 @@ class AddCategoryForm extends React.Component {
     );
   }
 }
-export default (AddCategoryForm = reduxForm({
+export default reduxForm({
   form: "category"
-})(AddCategoryForm));
+})(AddCategoryForm);
